@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#073d61" />
+  <meta name="description" content="跟著小潛潛探索藍洞，學會分配零用錢與認識投資風險。" />
+  <title>小小夢魔・藍洞大冒險</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="ambient" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="小小夢魔首頁"><span class="brand-mark">✦</span><span>小小夢魔<small>THE LITTLE DREAMER</small></span></a>
+    <div class="top-status"><span class="status-dot"></span> 藍洞探索中 <span class="divider">/</span> <span id="headerScore">珍珠 000</span></div>
+    <button class="sound-button" id="soundToggle" aria-label="切換音效">♫ <span>音效</span></button>
+  </header>
+
+  <main id="home" class="shell">
+    <section class="hero" id="hero">
+      <div class="hero-art" aria-hidden="true">
+        <div class="sunbeam beam-one"></div><div class="sunbeam beam-two"></div>
+        <div class="far-cliff cliff-left"></div><div class="far-cliff cliff-right"></div>
+        <div class="ledge ledge-left"><i></i><i></i><i></i></div><div class="ledge ledge-right"><i></i><i></i><i></i></div>
+        <div class="coral coral-a">✿</div><div class="coral coral-b">✧</div><div class="coral coral-c">✽</div>
+        <div class="jelly jelly-a"><b></b><i></i><i></i><i></i></div><div class="jelly jelly-b"><b></b><i></i><i></i></div>
+        <div class="fish fish-a">◀</div><div class="fish fish-b">◀</div>
+        <div class="diver"><span class="diver-pack"></span><span class="diver-head"></span><span class="diver-body"></span><span class="diver-fin"></span><span class="bubble b1"></span><span class="bubble b2"></span></div>
+        <div class="depth-label">BLUE HOLE <span>01 — 02</span></div>
+      </div>
+      <div class="hero-copy">
+        <div class="eyebrow"><span></span> 一段關於勇氣與選擇的海底旅程</div>
+        <h1>小小夢魔<em>・</em><br/>藍洞大冒險</h1>
+        <p class="lead">傳說在海底洞窟深處，藏著一把能打開夢境的鑰匙。<br/>跟著小潛潛出發，讓每一次選擇都成為成長的力量。</p>
+        <div class="hero-actions"><button class="primary" id="startBtn">開始探險 <span>↗</span></button><button class="quiet" id="howBtn">探險須知 <span>＋</span></button></div>
+        <div class="hero-note"><span class="sparkle">✦</span> 兩個關卡・兩把鑰匙・一份成長紀錄</div>
+      </div>
+      <div class="scroll-cue">向下探索 <span>↓</span></div>
+    </section>
+
+    <section class="journey" id="journey">
+      <div class="section-heading"><div><span class="eyebrow">YOUR JOURNEY</span><h2>穿過藍洞，帶走新本領</h2></div><div class="chapter-count">第 <b>01</b> 章 <span>—</span> 共 02 章</div></div>
+      <div class="chapter-grid">
+        <article class="chapter-card" id="card1"><div class="card-art art-pouch"><span class="art-number">01</span><span class="art-icon">◉</span><span class="coin coin-1">●</span><span class="coin coin-2">●</span><span class="seaweed">♧</span></div><div class="chapter-info"><div class="chapter-kicker">第一關 <span class="lock-status" id="status1">尚未開始</span></div><h3>海底小市集</h3><p>零用錢只有一袋，怎麼安排才能照顧需要，也替未來留一點？</p><div class="skill-tags"><span>需要與想要</span><span>儲蓄習慣</span></div><button class="chapter-button" data-stage="1">進入關卡 <span>→</span></button></div></article>
+        <div class="path-mark" aria-hidden="true"><span>✧</span><i></i></div>
+        <article class="chapter-card locked" id="card2"><div class="card-art art-reef"><span class="art-number">02</span><span class="art-icon">⌁</span><span class="reef r1"></span><span class="reef r2"></span><span class="pearl">✦</span></div><div class="chapter-info"><div class="chapter-kicker">第二關 <span class="lock-status" id="status2">🔒 等待第一把鑰匙</span></div><h3>珊瑚投資站</h3><p>把貝幣放進不同珊瑚園，認識風險、分散與耐心。</p><div class="skill-tags"><span>分散風險</span><span>長期觀念</span></div><button class="chapter-button" data-stage="2" disabled>先取得第一把鑰匙 <span>⌑</span></button></div></article>
+      </div>
+    </section>
+
+    <section class="lesson-strip"><span class="strip-icon">✧</span><p>理財不是把錢變魔法，而是練習<strong>做出適合自己的選擇。</strong></p><span class="strip-caption">LEARN BY EXPLORING</span></section>
+    <footer><span>小小夢魔・藍洞大冒險</span><span>給每一位勇敢探索的小小理財家 <b>✦</b></span></footer>
+  </main>
+
+  <div class="modal-backdrop" id="modal" hidden><section class="game-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="close-modal" id="closeModal" aria-label="關閉">×</button><div class="modal-progress"><span id="modalStage">第一關・互動挑戰</span><span id="roundLabel">第 1 / 3 題</span></div><div class="progress-track"><i id="progressFill"></i></div><div id="gameContent"></div></section></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="game.js"></script>
+</body>
+</html>
